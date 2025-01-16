@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Empathie-Memory</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Startbildschirm -->
+  <div id="start-screen" class="screen">
+    <h1>Empathie-Memory</h1>
+    
+    <!-- Auswahl der Kartenanzahl -->
+    <div id="pair-selection">
+      <h2>Anzahl der Paare wählen</h2>
+      <label>
+        <input type="radio" name="pair-count" value="4" checked>
+        4 Paare
+      </label>
+      <label>
+        <input type="radio" name="pair-count" value="8">
+        8 Paare
+      </label>
+      <label>
+        <input type="radio" name="pair-count" value="12">
+        12 Paare
+      </label>
+    </div>
+    
+    <!-- Start- und Anleitungs-Buttons -->
+    <button id="start-button">Spiel starten</button>
+    <button id="instructions-button">Anleitung</button>
+  </div>
+
+  <!-- Anleitungsbildschirm -->
+  <div id="instructions-screen" class="screen hidden">
+    <h2>Anleitung</h2>
+    
+    <!-- Scrollbarer Anleitungstext -->
+    <div id="instructions-content">
+      <h3>Ziel des Spiels</h3>
+      <p>
+        Das Empathie-Memory hilft Kindern, Emotionen zu erkennen, zu benennen und angemessen darauf zu reagieren. Es fördert Empathie, emotionale Intelligenz und soziale Kompetenzen.
+      </p>
+      
+      <h3>Spielregeln</h3>
+      <ol>
+        <li>Jeder Spieler deckt zwei Karten auf.</li>
+        <li>Finde Paare aus einer Emotion und der passenden Handlung.</li>
+        <li>Bei einem Treffer darf der Spieler das Paar behalten und erneut aufdecken.</li>
+        <li>Gewonnen hat, wer die meisten Paare sammelt.</li>
+      </ol>
+      
+      <h3>Pädagogische Tipps</h3>
+      <ul>
+        <li>Sprecht über die gefundenen Paare:</li>
+        <ul>
+          <li>“Wann fühlst du dich so?”</li>
+          <li>“Was könntest du in dieser Situation tun?”</li>
+        </ul>
+        <li>Fördert die Perspektivübernahme und das Verstehen von Emotionen.</li>
+      </ul>
+      
+      <h3>Spielvarianten</h3>
+      <ol>
+        <li><strong>Kooperativ:</strong> Arbeitet gemeinsam, um alle Paare zu finden. Diskutiert dabei, welche Handlungen in ähnlichen Situationen noch hilfreich sein könnten.</li>
+        <li><strong>Gefühlsdetektive:</strong> Ein Spieler beschreibt eine Situation (z. B. “Ein Kind ist traurig, weil es hingefallen ist”), und die anderen suchen die passende Emotion und Handlung.</li>
+        <li><strong>Ohne Handlungen:</strong> Verwendet nur die Emotionskarten. Diskutiert im Team, welche Handlung am besten dazu passen würde.</li>
+        <li><strong>Schnelles Memory:</strong> Spielt wie ein klassisches Memory ohne Gespräche. Ziel ist es, die Kartenpaare möglichst schnell zu finden.</li>
+        <li><strong>Emotion und Situation:</strong> Ergänzt die Handlungen durch selbst erfundene Situationen, die zur Emotion passen könnten (z. B. “Wann fühlt man Stolz?”).</li>
+      </ol>
+    </div>
+    
+    <button id="back-button">Zurück</button>
+  </div>
+
+  <!-- Spielbildschirm -->
+  <div id="game-screen" class="screen hidden">
+    <div id="header">
+      <div id="timer">Zeit: 00:00</div>
+      <div id="score">Punkte: 0</div>
+      <button id="mute-button">Ton aus</button>
+      <!-- Neue Zurück-Taste -->
+      <button id="back-to-menu-button">Zurück zum Menü</button>
+    </div>
+    <div id="card-grid"></div>
+    <button id="restart-button" class="hidden">Neustarten</button>
+  </div>
+
+  <!-- Modal für das Spielende -->
+  <div id="end-game-modal" class="modal hidden">
+    <div class="modal-content">
+      <span id="close-modal" class="close-button">&times;</span>
+      <h2>Glückwunsch!</h2>
+      <p id="end-game-message">Du hast alle Paare gefunden.</p>
+      <button id="close-modal-button">Schließen</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
